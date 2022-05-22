@@ -42,5 +42,5 @@ bigtable <- cbind(subjects, activities, data)
 melted <- melt(bigtable, id.vars = c("subject", "activity"))
 tidytable <- dcast(melted, subject+activity ~ variable, mean)
 
-# Write 'tidytable' to a .csv file in your working directory.
-write.csv(tidytable, "tidytable.csv")
+# Write 'tidytable' to a .txt file in your working directory.
+write.table(tidytable, "tidytable.txt", row.names = FALSE)
